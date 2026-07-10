@@ -1,0 +1,34 @@
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.crisnanda {
+  color: #ff80b0; /* Cor rosa da imagem */
+  font-size: 2rem;
+  font-family: sans-serif;
+  text-shadow: 0 0 10px #fff;
+  position: absolute;
+  /* A mágica do atraso para cada palavra se mover em sequência */
+  animation: formarFormas 8s infinite alternate ease-in-out;
+  animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes formarFormas {
+  0% { 
+    /* Posição inicial (Coração - simplificado) */
+    transform: translate(-100px, -50px) rotate(-20deg); 
+  }
+  50% { 
+    /* Posição intermediária */
+    transform: translate(0px, 0px) rotate(0deg); 
+  }
+  100% { 
+    /* Posição final (Gatinho - altere conforme precisar) */
+    transform: translate(100px, 50px) rotate(20deg); 
+  }
+}
