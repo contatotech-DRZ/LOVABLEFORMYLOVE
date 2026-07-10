@@ -1,18 +1,70 @@
-><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    /* Estilo da animação (Hero) */
+    .hero-section { 
+        background: #000; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        margin: 0; 
+    }
+    svg { width: 500px; height: 500px; overflow: visible; }
+    text { fill: #ff80b0; font-size: 16px; font-weight: bold; font-family: sans-serif; text-shadow: 0 0 10px #ff80b0; }
+
+    /* Estilo do conteúdo novo que desliza */
+    .content-section {
+        background: #111; /* Um cinza bem escuro para diferenciar do fundo preto */
+        color: rgb(255, 4, 222);
+        padding: 100px 20px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+  </style>
 </head>
 <body>
-    <div id="ui">
-  <div class="crisnanda" style="--i: 1;">crisnanda</div>
-  <div class="crisnanda" style="--i: 2;">crisnanda</div>
-  <div class="crisnanda" style="--i: 3;">crisnanda</div>
-  <div class="crisnanda" style="--i: 4;">crisnanda</div>
-  <div class="crisnanda" style="--i: 5;">crisnanda</div>
-  <div class="crisnanda" style="--i: 6;">crisnanda</div>
+
+<!-- Seção 1: Sua Animação -->
+<div class="hero-section">
+    <svg viewBox="0 0 300 300">
+      <path id="caminho" d="M150,260 C30,100 80,40 150,110 C220,40 270,100 150,260" />
+      <text>
+        <textPath id="textPath" href="#caminho" startOffset="0%">
+          CRISNANDA CRISNANDA CRISNANDA CRISNANDA CRISNANDA CRISNANDA CRISNANDA CRISNA
+        </textPath>
+      </text>
+    </svg>
 </div>
+
+<!-- Seção 2: O conteúdo que desliza para baixo -->
+<div class="content-section">
+    <h1>Bem-vinda ao universo Crisnanda</h1>
+    <p>Para a dona do meu coração... 💖
+
+Às vezes, as palavras não bastam para dizer o quanto você é especial, então resolvi criar esse pequeno universo só para você. Cada "Crisnanda" que você vê aí em cima, rodando e mudando de forma, é um pouquinho do amor que eu sinto por você: que se transforma, que é infinito e que sempre encontra um jeitinho de te acompanhar.
+
+Você é o meu coração e a minha flor, a pessoa que faz meus dias serem muito mais iluminados e bonitos.✨
+
+Obrigado por ser quem você é e por caminhar ao meu lado. Esse presente é um pedacinho do meu carinho para te lembrar, todos os dias, que eu te amo infinitamente.
+
+Sempre seu,
+Adriano</p>
+    <p>A página desliza naturalmente!</p>
+</div>
+
+<!-- Script permanece o mesmo -->
+<script>
+  const gatinho = "M150,260 L80,260 L50,180 L80,140 L110,180 L150,140 L190,180 L220,140 L250,180 L220,260 Z";
+  gsap.to("#textPath", {
+    startOffset: "70%", // Isso diz onde o texto começa
+    repeat: -1,         // O "-1" faz repetir infinitamente
+    duration: 12,       // Isso é a velocidade
+    ease: "linear"
+  });
+</script>
+
 </body>
 </html>
