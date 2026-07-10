@@ -58,12 +58,9 @@ Adriano</p>
 <!-- Script permanece o mesmo -->
 <script>
   const gatinho = "M150,260 L80,260 L50,180 L80,140 L110,180 L150,140 L190,180 L220,140 L250,180 L220,260 Z";
-  gsap.to("#textPath", {
-    startOffset: "70%", // Isso diz onde o texto começa
-    repeat: -1,         // O "-1" faz repetir infinitamente
-    duration: 12,       // Isso é a velocidade
-    ease: "linear"
-  });
+ gsap.to("#caminho", { attr: { d: gatinho }, repeat: -1, yoyo: true, duration: 3, ease: "power1.inOut" });
+  gsap.to("#textPath", { startOffset: "70%", repeat: -1, duration: 12, ease: "linear" });
+  ;
 </script>
 
 </body>
